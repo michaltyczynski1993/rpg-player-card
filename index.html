@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG card maker</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="row">
+            <label>Strength</label>
+            <button id="str-minus">-</button>
+            <span id="strength-number">0</span>
+            <button id="str-plus" onclick="strIncrease('strength-number')">+</button>
+        </div>
+        <div class="row">
+            <label>Mana</label>
+            <button id="minus">-</button>
+            <span id="mana-number">0</span>
+            <button id="plus">+</button>
+        </div>
+        <div class="row">
+            <label>Charisma</label>
+            <button id="minus">-</button>
+            <span id="char-number">0</span>
+            <button id="plus">+</button>
+        </div>
+        <div class="row">
+            <label>Inteligence</label>
+            <button id="minus">-</button>
+            <span id="int-number">0</span>
+            <button id="plus">+</button>
+        </div>
+        <div class="row">
+            <label>HP</label>
+            <button id="minus">-</button>
+            <span id="hp-number">10</span>
+            <button id="plus">+</button>
+        </div>
+    </main>
+
+    <!-- JS here -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
