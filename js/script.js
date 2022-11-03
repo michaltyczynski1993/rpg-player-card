@@ -102,3 +102,40 @@ function hpDecrease() {
     hp = newHp;
     hpSpan.innerText = hp * 10;
 }
+
+function showTable() {
+    // show table
+    let table = document.getElementById("attribute-table");
+    let playerName = document.getElementById("player-name");
+    let playerClass = document.getElementById("player-class");
+    let row = table.insertRow();
+    let firstCell = row.insertCell(0);
+    let secondCell = row.insertCell(1);
+    firstCell.innerHTML = playerName.value;
+    secondCell.innerHTML = playerClass.value;
+
+    table.style.visibility = "visible";
+    //init dict with values
+    const player = {
+        "strength": strength,
+        "mana": mana,
+        "charisma": charisma,
+        "inteligence": inteligence,
+        "Health": hp
+    };
+    /* dla każdej pary key/value w player:
+        dodaj do elementu 'tabela' kolejny row i wyświetl go na ekranie */
+    for (const [key, value] of Object.entries(player)) {
+        let row = table.insertRow();
+        let firstCell = row.insertCell(0);
+        let secondCell = row.insertCell(1);
+        if (key === "Health") {
+            firstCell.innerHTML = key;
+            secondCell.innerHTML = value * 10;
+        }
+        else {
+            firstCell.innerHTML = key;
+            secondCell.innerHTML = value;
+        }
+    }
+}
