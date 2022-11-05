@@ -19,43 +19,73 @@
 
             </div>
             <div class="row">
-                <label>Strength</label>
-                <button id="str-minus" onclick="strDecrease()">-</button>
-                <span id="strength-number">0</span>
-                <button id="str-plus" onclick="strIncrease()">+</button>
-            </div>
-            <div class="row">
-                <label>Mana</label>
-                <button id="minus" onclick="manaDecrease()">-</button>
-                <span id="mana-number">0</span>
-                <button id="plus" onclick="manaIncrease()">+</button>
-            </div>
-            <div class="row">
-                <label>Charisma</label>
-                <button id="minus" onclick="charDecrease()">-</button>
-                <span id="char-number">0</span>
-                <button id="plus" onclick="charIncrease()">+</button>
-            </div>
-            <div class="row">
-                <label>Inteligence</label>
-                <button id="minus" onclick="intDecrease()">-</button>
-                <span id="int-number">0</span>
-                <button id="plus" onclick="intIncrease()">+</button>
-            </div>
-            <div class="row">
-                <label>HP</label>
-                <div><button id="minus" onclick="hpDecrease()">-</button>
-                    <span id="hp-number">0</span>
-                    <button id="plus" onclick="hpIncrease()">+</button>
-                </div>
-            </div>
-            <div class="row">
-                <span id="max-points">Points Level reached! Decrease other attribute to add this point</span>
+                <div class="col"><label>Strength</label></div>
+                <div class="col align-start">
+                    <div class="item">
+                        <button id="str-minus" onclick="strDecrease()">-</button>
+                        <span id="strength-number">0</span>
+                        <button id="str-plus" onclick="strIncrease()">+</button>
+                    </div>
 
-            </div>
-            <div class="row">
-                <button type="submit" onclick="showTable()">Submit</button>
-            </div>
+
+                </div>
+                <div class="row">
+                    <div class="col"><label>Mana</label></div>
+                    <div class="col align-start">
+                        <div class="item">
+                            <button id="minus" onclick="manaDecrease()">-</button>
+                            <span id="mana-number">0</span>
+                            <button id="plus" onclick="manaIncrease()">+</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col"><label>Charisma</label></div>
+                    <div class="col align-start">
+                        <div class="item">
+                            <button id="minus" onclick="charDecrease()">-</button>
+                            <span id="char-number">0</span>
+                            <button id="plus" onclick="charIncrease()">+</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Inteligence</label>
+                    </div>
+                    <div class="col align-start">
+                        <div class="item">
+                            <button id="minus" onclick="intDecrease()">-</button>
+                            <span id="int-number">0</span>
+                            <button id="plus" onclick="intIncrease()">+</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>HP</label>
+                    </div>
+                    <div class="col align-start">
+                        <div class="item">
+                            <button id="minus" onclick="hpDecrease()">-</button>
+                            <span id="hp-number">0</span>
+                            <button id="plus" onclick="hpIncrease()">+</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <span id="max-points">Points Level reached! Decrease other attribute to add this point</span>
+                </div>
+                <div class="row">
+                    <button type="submit" onclick="showTable()">Submit</button>
+                </div>
         </section>
         <section class="container">
             <table id="attribute-table">

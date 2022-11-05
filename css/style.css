@@ -31,8 +31,16 @@ label {
 .col {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 1;
+    align-items: flex-end;
+}
+
+.item {
+    flex-direction: row;
+}
+
+.align-start {
+    align-items: flex-start;
 }
 
 #max-points {

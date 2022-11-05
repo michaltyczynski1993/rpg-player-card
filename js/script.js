@@ -117,7 +117,7 @@ function showTable() {
         secondCell.innerHTML = playerClass.value;
         table.style.visibility = "visible";
 
-        //init dict with values
+        //init obj with values
         const player = {
             "strength": strength,
             "mana": mana,
