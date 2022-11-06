@@ -11,7 +11,8 @@ input {
     margin: 0 0.2rem;
     border: none;
     border-radius: 0.2rem;
-    box-shadow: 0.1rem 0.1rem 0.3rem #686868
+    box-shadow: 0.1rem 0.1rem 0.3rem #686868;
+    height: 1.5rem;
 }
 
 button {

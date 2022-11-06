@@ -1,11 +1,12 @@
 // Variables
-let strength = 0;
-let mana = 0;
-let charisma = 0;
-let inteligence = 0;
-let hp = 0;
 const maxPoints = 40;
-
+let attributes = {
+    strength: 0,
+    mana: 0,
+    charisma: 0,
+    inteligence: 0,
+    hp: 0
+}
 // communicate
 const maxPointsInfo = document.getElementById("max-points");
 // span's
@@ -17,7 +18,7 @@ const hpSpan = document.getElementById("hp-number");
 
 // sum of all attributes
 function sum() {
-    let sum = strength + mana + charisma + inteligence + hp;
+    let sum = attributes.strength + attributes.mana + attributes.charisma + attributes.inteligence + attributes.hp;
     return sum;
 }
 function increase(value) {
@@ -46,62 +47,62 @@ function decrease(value) {
 }
 //strength functions
 function strIncrease() {
-    let newStrength = increase(strength);
-    strength = newStrength;
-    strSpan.innerText = strength;
+    let newStrength = increase(attributes.strength);
+    attributes.strength = newStrength;
+    strSpan.innerText = attributes.strength;
 }
 function strDecrease() {
-    let newStrength = decrease(strength);
-    strength = newStrength;
-    strSpan.innerText = strength;
+    let newStrength = decrease(attributes.strength);
+    attributes.strength = newStrength;
+    strSpan.innerText = attributes.strength;
 }
 
 //mana functions
 function manaIncrease() {
-    let newMana = increase(mana);
-    mana = newMana;
-    manaSpan.innerText = mana;
+    let newMana = increase(attributes.mana);
+    attributes.mana = newMana;
+    manaSpan.innerText = attributes.mana;
 }
 function manaDecrease() {
-    let newMana = decrease(mana);
-    mana = newMana;
-    manaSpan.innerText = mana;
+    let newMana = decrease(attributes.mana);
+    attributes.mana = newMana;
+    manaSpan.innerText = attributes.mana;
 }
 
 // charisma functions
 function charIncrease() {
-    let newChar = increase(charisma);
-    charisma = newChar;
-    charSpan.innerText = charisma;
+    let newChar = increase(attributes.charisma);
+    attributes.charisma = newChar;
+    charSpan.innerText = attributes.charisma;
 }
 function charDecrease() {
-    let newChar = decrease(charisma);
-    charisma = newChar;
-    charSpan.innerText = charisma;
+    let newChar = decrease(attributes.charisma);
+    attributes.charisma = newChar;
+    charSpan.innerText = attributes.charisma;
 }
 
 // inteligence functions
 function intIncrease() {
-    let newInt = increase(inteligence);
-    inteligence = newInt;
-    intSpan.innerText = inteligence;
+    let newInt = increase(attributes.inteligence);
+    attributes.inteligence = newInt;
+    intSpan.innerText = attributes.inteligence;
 }
 function intDecrease() {
-    let newInt = decrease(inteligence);
-    inteligence = newInt;
-    intSpan.innerText = inteligence;
+    let newInt = decrease(attributes.inteligence);
+    attributes.inteligence = newInt;
+    intSpan.innerText = attributes.inteligence;
 }
 
 // hp functions
 function hpIncrease() {
-    let newHp = increase(hp);
-    hp = newHp;
-    hpSpan.innerText = hp * 10;
+    let newHp = increase(attributes.hp);
+    attributes.hp = newHp;
+    hpSpan.innerText = attributes.hp * 10;
 }
 function hpDecrease() {
-    let newHp = decrease(hp);
-    hp = newHp;
-    hpSpan.innerText = hp * 10;
+    let newHp = decrease(attributes.hp);
+    attributes.hp = newHp;
+    hpSpan.innerText = attributes.hp * 10;
 }
 
 function showTable() {
@@ -118,21 +119,13 @@ function showTable() {
         secondCell.innerHTML = playerClass.value;
         table.style.visibility = "visible";
 
-        //init obj with values
-        const player = {
-            "strength": strength,
-            "mana": mana,
-            "charisma": charisma,
-            "inteligence": inteligence,
-            "Health": hp
-        };
-        /* dla każdej pary key/value w player:
-            dodaj do elementu 'tabela' kolejny row i wyświetl go na ekranie */
-        for (const [key, value] of Object.entries(player)) {
+        /* for every pair key/value in attributes:
+            add to element 'table' another row and display to the user */
+        for (const [key, value] of Object.entries(attributes)) {
             let row = table.insertRow();
             let firstCell = row.insertCell(0);
             let secondCell = row.insertCell(1);
-            if (key === "Health") {
+            if (key === "hp") {
                 firstCell.innerHTML = key;
                 secondCell.innerHTML = value * 10;
             }
