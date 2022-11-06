@@ -5,6 +5,7 @@ let charisma = 0;
 let inteligence = 0;
 let hp = 0;
 const maxPoints = 40;
+
 // communicate
 const maxPointsInfo = document.getElementById("max-points");
 // span's
