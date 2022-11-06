@@ -8,11 +8,11 @@ label {
 }
 
 input {
-    margin: 0 0.2rem;
+    margin: 0.2rem 0.2rem;
     border: none;
     border-radius: 0.2rem;
     box-shadow: 0.1rem 0.1rem 0.3rem #686868;
-    height: 1.5rem;
+    padding: 0.3rem 0.6rem;
 }
 
 button {
@@ -22,7 +22,7 @@ button {
     border: none;
     border-radius: 0.2rem;
     color: white;
-    box-shadow: 0.1rem 0.1rem 0.2rem #686868
+    box-shadow: 0.1rem 0.1rem 0.2rem #686868;
 }
 
 button:hover {
@@ -37,7 +37,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -96,4 +96,18 @@ table tr:nth-child(odd) {
 
 table td:nth-child(even) {
     font-weight: bold;
+}
+
+.points-left,
+.points-total {
+    box-shadow: 0.1rem 0.1rem 0.2rem #686868;
+    border-radius: 0.2rem;
+    display: flex;
+    padding: 0.3rem 0.6rem;
+    margin: 0 0.3rem;
+}
+
+.points-left span,
+.points-total span {
+    margin-left: 0.3rem;
 }

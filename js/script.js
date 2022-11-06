@@ -5,7 +5,8 @@ let attributes = {
     mana: 0,
     charisma: 0,
     inteligence: 0,
-    hp: 0
+    hp: 0,
+    pointsLeft: maxPoints
 }
 // communicate
 const maxPointsInfo = document.getElementById("max-points");
@@ -15,14 +16,27 @@ const manaSpan = document.getElementById("mana-number");
 const charSpan = document.getElementById("char-number");
 const intSpan = document.getElementById("int-number");
 const hpSpan = document.getElementById("hp-number");
+const pointSpan = document.getElementById("points-left-value");
+const pointTotal = document.getElementById("points-total-value");
 
+// on page load change points equal to pointsLeft var
+window.onload = function () {
+    pointSpan.innerText = attributes.pointsLeft;
+    pointTotal.innerText = maxPoints;
+}
 // sum of all attributes
 function sum() {
     let sum = attributes.strength + attributes.mana + attributes.charisma + attributes.inteligence + attributes.hp;
     return sum;
 }
+
+function pointsToassign() {
+    let pointSum = sum();
+    attributes.pointsLeft = maxPoints - pointSum;
+    pointSpan.innerHTML = attributes.pointsLeft;
+}
 function increase(value) {
-    pointSum = sum();
+    let pointSum = sum();
     if (pointSum < maxPoints) {
         value++;
         maxPointsInfo.style.visibility = "hidden";
@@ -31,12 +45,14 @@ function increase(value) {
         maxPointsInfo.style.visibility = "visible";
         maxPointsInfo.innerText = "Points Level reached! Decrease other attribute to add this point";
     }
+    pointsToassign();
     return value;
 }
 
 function decrease(value) {
     if (value > 0) {
         value--;
+        pointSum = sum();
         maxPointsInfo.style.visibility = "hidden";
     }
     else {
@@ -50,11 +66,13 @@ function strIncrease() {
     let newStrength = increase(attributes.strength);
     attributes.strength = newStrength;
     strSpan.innerText = attributes.strength;
+    pointsToassign();
 }
 function strDecrease() {
     let newStrength = decrease(attributes.strength);
     attributes.strength = newStrength;
     strSpan.innerText = attributes.strength;
+    pointsToassign();
 }
 
 //mana functions
@@ -62,11 +80,13 @@ function manaIncrease() {
     let newMana = increase(attributes.mana);
     attributes.mana = newMana;
     manaSpan.innerText = attributes.mana;
+    pointsToassign();
 }
 function manaDecrease() {
     let newMana = decrease(attributes.mana);
     attributes.mana = newMana;
     manaSpan.innerText = attributes.mana;
+    pointsToassign();
 }
 
 // charisma functions
@@ -74,11 +94,13 @@ function charIncrease() {
     let newChar = increase(attributes.charisma);
     attributes.charisma = newChar;
     charSpan.innerText = attributes.charisma;
+    pointsToassign();
 }
 function charDecrease() {
     let newChar = decrease(attributes.charisma);
     attributes.charisma = newChar;
     charSpan.innerText = attributes.charisma;
+    pointsToassign();
 }
 
 // inteligence functions
@@ -86,11 +108,13 @@ function intIncrease() {
     let newInt = increase(attributes.inteligence);
     attributes.inteligence = newInt;
     intSpan.innerText = attributes.inteligence;
+    pointsToassign();
 }
 function intDecrease() {
     let newInt = decrease(attributes.inteligence);
     attributes.inteligence = newInt;
     intSpan.innerText = attributes.inteligence;
+    pointsToassign();
 }
 
 // hp functions
@@ -98,11 +122,13 @@ function hpIncrease() {
     let newHp = increase(attributes.hp);
     attributes.hp = newHp;
     hpSpan.innerText = attributes.hp * 10;
+    pointsToassign();
 }
 function hpDecrease() {
     let newHp = decrease(attributes.hp);
     attributes.hp = newHp;
     hpSpan.innerText = attributes.hp * 10;
+    pointsToassign();
 }
 
 function showTable() {
